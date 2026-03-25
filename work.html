@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work — Hikmah Adetunji</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="work.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">Hikmah Adetunji.</a>
+   <div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="work.html" class="active">Work</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="hero-left-text">
+      <span class="section-tag">Portfolio</span>
+      <h1>Scripts<br>I've <em>Written</em></h1>
+    </div>
+    <div class="hero-right-text">
+      <p>Every script here serve one purpose — keep viewers watching. Browse by niche or search for a topic to find what's relevant to you.</p>
+      <div class="script-count-row">
+        <div class="script-count">
+          <div class="n">500<span>+</span></div>
+          <div class="l">Total Scripts</div>
+        </div>
+        <div class="script-count">
+          <div class="n">5<span>+</span></div>
+          <div class="l">Niches Covered</div>
+        </div>
+        <div class="script-count">
+          <div class="n">4<span>yr</span></div>
+          <div class="l">Experience</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker">
+    <span class="ticker-item">Finance</span><span class="ticker-item">✦</span>
+    <span class="ticker-item">Automotive</span><span class="ticker-item">✦</span>
+    <span class="ticker-item">Documentary</span><span class="ticker-item">✦</span>
+    <span class="ticker-item">Explainer</span><span class="ticker-item">✦</span>
+    <span class="ticker-item">Tech</span><span class="ticker-item">✦</span>
+    <span class="ticker-item">Education</span><span class="ticker-item">✦</span>
+    <span class="ticker-item">Finance</span><span class="ticker-item">✦</span>
+    <span class="ticker-item">Automotive</span><span class="ticker-item">✦</span>
+    <span class="ticker-item">Documentary</span><span class="ticker-item">✦</span>
+    <span class="ticker-item">Explainer</span><span class="ticker-item">✦</span>
+    <span class="ticker-item">Tech</span><span class="ticker-item">✦</span>
+    <span class="ticker-item">Education</span><span class="ticker-item">✦</span>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="work-main">
+
+  <!-- Controls -->
+  <div class="controls">
+    <div class="filter-pills" id="filterPills">
+      <button class="pill active" data-filter="all">All Scripts</button>
+      <button class="pill" data-filter="finance">💰 Finance</button>
+      <button class="pill" data-filter="automotive">🚗 Automotive</button>
+      <button class="pill" data-filter="documentary">🎬 Documentary</button>
+      <button class="pill" data-filter="true crime"> 💀True Crime</button>
+      <button class="pill" data-filter="tech">📱 Tech</button>
+      <button class="pill" data-filter="education">📚 Education</button>
+      <button class="pill" data-filter="beauty/fashion">💄 Beauty/Fashion</button>
+      <button class="pill" data-filter="health">🏥 Health</button>
+    </div>
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="Search scripts…">
+    </div>
+  </div>
+
+  <div class="controls-bottom">
+    <div class="results-count" id="resultsCount">
+      Showing <span id="countNum">12</span> scripts
+    </div>
+    <div class="view-toggle">
+      <button class="view-btn active" id="gridBtn" title="Grid view">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <rect x="0" y="0" width="6" height="6" rx="1" fill="currentColor"/>
+          <rect x="8" y="0" width="6" height="6" rx="1" fill="currentColor"/>
+          <rect x="0" y="8" width="6" height="6" rx="1" fill="currentColor"/>
+          <rect x="8" y="8" width="6" height="6" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+      <button class="view-btn" id="listBtn" title="List view">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <rect x="0" y="1" width="14" height="2" rx="1" fill="currentColor"/>
+          <rect x="0" y="6" width="14" height="2" rx="1" fill="currentColor"/>
+          <rect x="0" y="11" width="14" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- GRID VIEW -->
+  <div class="scripts-grid visible" id="gridView">
+    <!-- Cards injected by JS -->
+  </div>
+
+  <!-- LIST VIEW -->
+  <div class="scripts-list" id="listView">
+    <div class="list-header">
+      <span>Script Title</span>
+      <span>Niche</span>
+      <span>Link</span>
+    </div>
+    <!-- Items injected by JS -->
+  </div>
+
+  <!-- Empty state -->
+  <div class="empty-state" id="emptyState">
+    <div class="emoji">🔍</div>
+    <h3>No scripts found</h3>
+    <p>Try a different search term or filter.</p>
+  </div>
+
+  <div class="load-more-wrap" id="loadMoreWrap">
+    <button class="btn-outline" id="loadMoreBtn">Load More Scripts</button>
+  </div>
+</div>
+
+<!-- CTA STRIP -->
+<div class="work-cta">
+  <div>
+    <h2>DON'T SEE YOUR<br>NICHE? <em>LET'S TALK.</em></h2>
+    <p>I've written across 5+ content categories. If your topic isn't listed, reach out — chances are I've covered it.</p>
+  </div>
+  <a href="index.html#contact" class="btn-primary">→ Get In Touch</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Hikmah Adetunji. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="#">LinkedIn</a>
+    <a href="#">Twitter/X</a>
+    <a href="#">Upwork</a>
+    <a href="mailto:hikmahadetunji20@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script>
+//Hamburger menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle("active");
+    hamburger.classList.toggle('active');
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    hamburger.classList.remove('active');
+  });
+});
+  // SCRIPT DATA 
+  const scripts = [
+    { title: "10 EYE-OPENING Money Secrets From 10 Finance Books", niche: "finance", icon: "💰", href: "https://docs.google.com/document/d/1Xubg43C51r-zm7Qz2BWPcAtL4uTUfX1eIY-7fKqSXfw/edit?usp=sharing" },
+    { title: "Script Title Goes Here", niche: "automotive",  icon: "🚗", href: "#" },
+    { title: "At 49, Leonardo DiCaprio FINALLY Confirms What We All Suspected", niche: "documentary", icon: "🎬", href: "https://docs.google.com/document/d/1-qkqIVoRy3BZi0nnRckLBLBsRvC5HnCsnBqGYY3cRSM/edit?usp=sharing" },
+    { title: "Script Title Goes Here", niche: "true crime",   icon: "💀", href: "#" },
+    { title: "How Working in Tech Went from Being a Dream Job to the Worst", niche: "tech", icon: "📱", href: "https://docs.google.com/document/d/1GwGMFyE-ebZzrhV8c1HbbQV3oBygWFj7PUyIW8ehas4/edit?usp=sharing" },
+    { title: "Script Title Goes Here", niche: "education",   icon: "📚", href: "#" },
+    { title: "10 Ways To Increase Your Financial IQ", niche: "finance",     icon: "💰", href: "https://docs.google.com/document/d/1F2NdmJnstc52rzKiQZv-baKIpYW4xFpKNzzhiuVv3qM/edit?usp=sharing" },
+    { title: "Script Title Goes Here", niche: "automotive",  icon: "🚗", href: "#" },
+    { title: "Behind The Making Of a Billion Dollar Makeup Brand (Fenty Beauty By Rihanna)", niche: "beauty/fashion",icon: "💄", href:"https://docs.google.com/document/d/1uCBR0VUoDebgAik-jBK9dp8IKvwd8UiMMbZTIuSuqEQ/edit?usp=sharing" },
+    { title: "At 32, Christopher's son drops a bombshell about his father's tragic accident", niche: "documentary", icon: "🎬", href: "https://docs.google.com/document/d/1mj1q9eJz3H1cMwCmMwotl0XRqbnRLGQOEqdTB2nA1qM/edit?usp=sharing" },
+    { title: "Script Title Goes Here", niche: "true crime",  icon: "💀", href: "#" },
+    { title: "Script Title Goes Here", niche: "tech",        icon: "📱", href: "#" },
+    { title: "Script Title Goes Here", niche: "education",   icon: "📚", href: "#" },
+    { title: "Script Title Goes Here", niche: "health",      icon: "🏥", href: "#" },
+    { title: "Script Title Goes Here", niche: "finance",     icon: "💰", href: "#" },
+    { title: "Script Title Goes Here", niche: "automotive",  icon: "🚗", href: "#" },
+    { title: "The Shocking Truth About Marilyn Monroe’s Mysterious Death", niche: "documentary", icon: "🎬", href: "https://docs.google.com/document/d/1ySW5jL-AylaOPN91fxH-AP0kSXrEdM4PsgiC1vfcsMs/edit?usp=sharing" },
+    { title: "Script Title Goes Here", niche: "tech",        icon: "📱", href: "#" },
+    { title: "The Rise and Likely Fall of Rhode", niche: "beauty/fashion",icon: "💄", href:"https://docs.google.com/document/d/181VRQA86lRicF8FqdUS2FHuaqSEdoFf2v6P0Xjwb9Z0/edit?usp=sharing" },
+    { title: "Script Title Goes Here", niche: "health",        icon: "🏥", href: "#" },
+    { title: "The Dark Truth Behind Your Favourite Makeup Products (Mica Powder)", niche: "beauty/fashion",icon: "💄", href:"https://docs.google.com/document/d/1I_87hLsnbpKUKehYtGPsugKuwpq39asFOm5BKEUOeyg/edit?usp=sharing" },
+
+
+  ];
+
+  const nicheLabels = {
+    finance: "Finance", automotive: "Automotive",
+    documentary: "Documentary", tech: "Tech", 
+    education: "Education", "true crime": "True Crime", 
+    "beauty/fashion":"Beauty/Fashion", health: "Health"
+  };
+
+  const BATCH = 9;
+  let currentFilter = "all";
+  let currentSearch = "";
+  let currentView = "grid";
+  let showing = BATCH;
+
+  const gridView    = document.getElementById("gridView");
+  const listView    = document.getElementById("listView");
+  const emptyState  = document.getElementById("emptyState");
+  const countNum    = document.getElementById("countNum");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+  const loadMoreWrap= document.getElementById("loadMoreWrap");
+
+  function getFiltered() {
+    return scripts.filter(s => {
+      const matchFilter = currentFilter === "all" || s.niche === currentFilter;
+      const matchSearch = s.title.toLowerCase().includes(currentSearch.toLowerCase());
+      return matchFilter && matchSearch;
+    });
+  }
+
+  function renderGrid(items, limit) {
+    gridView.innerHTML = "";
+    items.slice(0, limit).forEach((s, i) => {
+      const card = document.createElement("div");
+      card.className = "script-card";
+      card.style.animationDelay = (i % BATCH * 0.05) + "s";
+      card.innerHTML = `
+        <div class="card-top">
+          <div class="card-top-pattern"></div>
+          <div class="card-top-icon">${s.icon}</div>
+          <span class="card-niche-tag">${nicheLabels[s.niche]}</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">${s.title}</div>
+          <div class="card-footer">
+            <span class="card-type">${nicheLabels[s.niche]}</span>
+            <a href="${s.href}" target="_blank" class="read-link">Read →</a>
+          </div>
+        </div>`;
+      gridView.appendChild(card);
+    });
+  }
+
+  function renderList(items, limit) {
+    // keep header
+    const header = listView.querySelector(".list-header");
+    listView.innerHTML = "";
+    listView.appendChild(header);
+    items.slice(0, limit).forEach((s, i) => {
+      const row = document.createElement("div");
+      row.className = "list-item";
+      row.style.animationDelay = (i % BATCH * 0.04) + "s";
+      row.innerHTML = `
+        <div class="list-title-wrap">
+          <span class="list-item-num">${String(i + 1).padStart(2, "0")}</span>
+          <div class="list-icon">${s.icon}</div>
+          <span class="list-title">${s.title}</span>
+        </div>
+        <span class="list-niche">${nicheLabels[s.niche]}</span>
+        <a href="${s.href}" target="_blank" class="list-link">Read →</a>`;
+      listView.appendChild(row);
+    });
+  }
+
+  function render() {
+    const filtered = getFiltered();
+    const limited  = Math.min(showing, filtered.length);
+
+    countNum.textContent = filtered.length;
+    const isEmpty = filtered.length === 0;
+    emptyState.classList.toggle("visible", isEmpty);
+    loadMoreWrap.style.display = filtered.length > showing ? "block" : "none";
+
+    if (currentView === "grid") {
+      gridView.classList.add("visible");
+      gridView.style.display = isEmpty ? "none" : "grid";
+      listView.classList.remove("visible");
+      listView.style.display = "none";
+      if (!isEmpty) renderGrid(filtered, limited);
+    } else {
+      listView.classList.add("visible");
+      listView.style.display = isEmpty ? "none" : "flex";
+      gridView.classList.remove("visible");
+      gridView.style.display = "none";
+      if (!isEmpty) renderList(filtered, limited);
+    }
+  }
+
+  // Filter pills
+  document.getElementById("filterPills").addEventListener("click", e => {
+    const btn = e.target.closest(".pill");
+    if (!btn) return;
+    document.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
+    btn.classList.add("active");
+    currentFilter = btn.dataset.filter;
+    showing = BATCH;
+    render();
+  });
+
+  // Search
+  document.getElementById("searchInput").addEventListener("input", e => {
+    currentSearch = e.target.value;
+    showing = BATCH;
+    render();
+  });
+
+  // View toggle
+  document.getElementById("gridBtn").addEventListener("click", () => {
+    currentView = "grid";
+    document.getElementById("gridBtn").classList.add("active");
+    document.getElementById("listBtn").classList.remove("active");
+    render();
+  });
+  document.getElementById("listBtn").addEventListener("click", () => {
+    currentView = "list";
+    document.getElementById("listBtn").classList.add("active");
+    document.getElementById("gridBtn").classList.remove("active");
+    render();
+  });
+
+  // Load more
+  loadMoreBtn.addEventListener("click", () => {
+    showing += BATCH;
+    render();
+  });
+
+  // Init
+  render();
+</script>
+</body>
+</html>
