@@ -1026,7 +1026,7 @@
     grid-template-columns: 1fr;
 }
     .featured, .guarantee, .faq, .services, .results,
-    .audience, .process, .testimonials, .cta-section { 
+    .audience, .process, .testimonials, .cta-section .stats{ 
     padding: 4rem 2rem; 
 }
 .featured-logo{
